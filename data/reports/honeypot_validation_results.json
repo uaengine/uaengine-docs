@@ -1,0 +1,231 @@
+{
+  "timestamp": "2025-06-28T21:53:37.446486",
+  "validation_status": "PARTIAL",
+  "component_tests": {
+    "imports": {
+      "status": "PASSED",
+      "details": {
+        "core_imports": "SUCCESS",
+        "manager_init": "SUCCESS",
+        "default_honeypots": 10,
+        "ai_classifier_init": "SUCCESS",
+        "feature_extractors": 4
+      },
+      "errors": []
+    },
+    "honeypot_creation": {
+      "status": "PASSED",
+      "details": {
+        "custom_creation": "SUCCESS",
+        "honeypot_id": "0ef70b6f-9db2-4800-b65c-a94e2de3009f",
+        "total_honeypots": 11,
+        "honeypots_created": 1,
+        "fake_data_generated": true,
+        "honeypot_active": true,
+        "admin_panel_data": true,
+        "environment_file_data": true,
+        "database_backup_data": true
+      },
+      "errors": []
+    },
+    "ai_classification": {
+      "status": "PASSED",
+      "details": {
+        "benign_classification": {
+          "threat_level": "low",
+          "confidence": 0.0,
+          "attack_type": "reconnaissance"
+        },
+        "malicious_classification": {
+          "threat_level": "medium",
+          "confidence": 0.5,
+          "attack_type": "injection"
+        },
+        "feature_extraction": {
+          "frequency_features": 5,
+          "payload_features": 8,
+          "timing_features": 5,
+          "geo_features": 4
+        }
+      },
+      "errors": []
+    },
+    "intrusion_response": {
+      "status": "PASSED",
+      "details": {
+        "low_threat_response": {
+          "status": "success",
+          "has_data": true,
+          "delay_applied": 3.0
+        },
+        "high_threat_response": {
+          "status": "success",
+          "delay_applied": 6.0,
+          "threat_level": null
+        },
+        "events_logged": 7,
+        "threat_intelligence": 2
+      },
+      "errors": []
+    },
+    "threat_intelligence": {
+      "status": "FAILED",
+      "details": {},
+      "errors": [
+        "Threat intelligence error: 'honeypot_stats'"
+      ]
+    }
+  },
+  "end_to_end_tests": {
+    "attack_simulation": {
+      "status": "PASSED",
+      "details": {
+        "reconnaissance_request_0": {
+          "endpoint": "/robots.txt",
+          "response_status": null,
+          "delay_applied": 0
+        },
+        "reconnaissance_request_1": {
+          "endpoint": "/.well-known/security.txt",
+          "response_status": null,
+          "delay_applied": 0
+        },
+        "reconnaissance_request_2": {
+          "endpoint": "/sitemap.xml",
+          "response_status": null,
+          "delay_applied": 0
+        },
+        "reconnaissance_request_3": {
+          "endpoint": "/admin",
+          "response_status": null,
+          "delay_applied": 0
+        },
+        "reconnaissance_request_4": {
+          "endpoint": "/wp-admin",
+          "response_status": null,
+          "delay_applied": 0
+        },
+        "vulnerability_scanning_request_0": {
+          "endpoint": "/.env",
+          "response_status": "success",
+          "delay_applied": 3.0
+        },
+        "vulnerability_scanning_request_1": {
+          "endpoint": "/config.php",
+          "response_status": "success",
+          "delay_applied": 3.0
+        },
+        "vulnerability_scanning_request_2": {
+          "endpoint": "/backup.sql",
+          "response_status": "success",
+          "delay_applied": 3.0
+        },
+        "vulnerability_scanning_request_3": {
+          "endpoint": "/debug/phpinfo",
+          "response_status": "success",
+          "delay_applied": 3.0
+        },
+        "vulnerability_scanning_request_4": {
+          "endpoint": "/.git/config",
+          "response_status": "success",
+          "delay_applied": 3.0
+        },
+        "exploitation_attempts_request_0": {
+          "endpoint": "/login",
+          "response_status": null,
+          "delay_applied": 0
+        },
+        "exploitation_attempts_request_1": {
+          "endpoint": "/search",
+          "response_status": null,
+          "delay_applied": 0
+        },
+        "exploitation_attempts_request_2": {
+          "endpoint": "/upload",
+          "response_status": null,
+          "delay_applied": 0
+        },
+        "exploitation_attempts_request_3": {
+          "endpoint": "/admin",
+          "response_status": null,
+          "delay_applied": 0
+        },
+        "exploitation_attempts_request_4": {
+          "endpoint": "/api",
+          "response_status": null,
+          "delay_applied": 0
+        },
+        "campaign_results": {
+          "execution_time_seconds": 15.018857955932617,
+          "total_requests": 15,
+          "attacker_threat_level": "low",
+          "attacker_confidence": 0.0,
+          "final_threat_summary": {
+            "total_events": 5,
+            "active_threats": 1,
+            "blacklisted_ips": 0,
+            "threat_distribution": {
+              "low": 1
+            },
+            "top_threats": [
+              {
+                "source_ip": "203.0.113.100",
+                "threat_level": "low",
+                "attack_type": "reconnaissance",
+                "confidence": 0.0,
+                "last_seen": "2025-06-28T21:54:28.672158"
+              }
+            ],
+            "recommendations": [
+              "\u2705 Security posture appears stable",
+              "\ud83d\udd04 Monitor and maintain vigilance"
+            ],
+            "honeypot_stats": {
+              "total_honeypots": 10,
+              "triggered_honeypots": 5
+            }
+          }
+        }
+      },
+      "errors": []
+    }
+  },
+  "performance_metrics": {
+    "response_times": {
+      "total_time": 3.013921022415161,
+      "average_per_request": 0.03013921022415161,
+      "requests_per_second": 33.17936974999646
+    },
+    "throughput": {
+      "successful_requests": 100,
+      "failed_requests": 0,
+      "success_rate": 100.0
+    },
+    "memory_usage": {
+      "rss_mb": 50.09375,
+      "vms_mb": 401297.703125,
+      "cpu_percent": 0.0
+    },
+    "errors": []
+  },
+  "security_validation": {
+    "data_protection": {
+      "fake_data_present": true,
+      "contains_fake_credentials": true,
+      "no_real_passwords": false
+    },
+    "access_controls": {
+      "whitelist_respected": true,
+      "blacklist_functionality": true,
+      "response_escalation": true
+    },
+    "threat_isolation": {
+      "active_responses_logged": false,
+      "threat_intelligence_generated": true,
+      "escalation_triggers": false
+    },
+    "errors": []
+  },
+  "errors": [],
+  "recommendations": []
+}
